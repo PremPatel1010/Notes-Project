@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Notes</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Prem Patel</h1>
+    </header>
+
+    <main>
+      <section class="text-content">
+        <h3>Books I've Read</h3>
+        <p>
+          Tiny summary but detailed notes for each. Use the ISBN number to find it
+          from your local library or anywhere else. This page will constantly
+          update as I read more, so bookmark it if you want to check back in a few
+          months. Sorted with my top recommendations up top. Sort by 
+          <a href="/?sort=newest">newest</a> or <a href="/?sort=rating">rating</a>.
+        </p>
+      </section>
+
+      <section class="add">
+        <form method="get" action="/add">
+          <button type="submit">Add Book</button>
+        </form>
+      </section>
+
+      
+      
+
+      <hr />
+
+      <section class="book-list">
+        <ul>
+          <% books.forEach(book => { %>
+          <li class="book-card">
+            <div class="book-title">
+              <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="<%= book.title %> cover" />
+              <h2><%= book.title %></h2>
+            </div>
+            <div class="main-content">
+              <p><%= book.description %></p>
+              <form action="/notes/<%= book.id %>" method="post">
+                <button type="submit">Click Here to View Notes</button>
+              </form>
+            </div>
+          </li>
+          <% }); %>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Prem Patel. All rights reserved.</p>
+    </footer>
+    
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Book Notes</h1>
+  </header>
+
+  <main>
+    <section class="title-section">
+      <img src="https://covers.openlibrary.org/b/isbn/<%= books.isbn %>-M.jpg" alt="<%= books.title %> cover" />
+      <div class="book-details">
+        <h2><%= books.title %></h2>
+        <p><%= books.description %></p>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h3>Notes</h3>
+      <p><%= books.notes %></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Prem Patel. All rights reserved.</p>
+  </footer>
+</body>
+</html>
